@@ -42,7 +42,7 @@ export default function Login(props) {
                     <h1>Student Login Logger</h1>
                 </div>
                 <div className={styles.right}>
-                    <button onClick={logout} style={optionalStyles} className={styles.logOut} id='logOut'>Log Out</button>
+                    <button onClick={logout} className={styles.logOut} id='logOut'>Log Out</button>
                 </div>
             </div>
             <div className={styles.buttomline}></div>

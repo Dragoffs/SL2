@@ -64,9 +64,12 @@ export default function Home() {
 
 						<h2>
 							Logged in as {professor.first_name}{" "}
-							{professor.last_name} with e-mail {professor.email}{" "}
-							| Select Course Section to View Login Analytics:
+							{professor.last_name} with E-mail: {professor.email}{" "}
 						</h2>
+						<h3>
+							Select one of your course sections for this semester to view its login analytics:
+						</h3>
+						
 						{courses.map((element) => (
 							<button className={styles.courselist} onClick={ () => redirectCourse(element) }>{element}</button>
 						))}
@@ -75,6 +78,7 @@ export default function Home() {
 
 				<div className={styles.chart}>
 					{/* this is for the optional digest chart area*/}
+
 				</div>
 				<div className={styles.alerts}>
 					{/* this is for alert box */}

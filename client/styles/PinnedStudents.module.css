@@ -1,13 +1,12 @@
 
 .container{
-    margin-left: 20%;
     background-color: white;
     border-radius: 10px;
-    width: 45%; /* CHANGE THIS LINE FOR PINNED WIDTH*/
+    width: auto; /* CHANGE THIS LINE FOR PINNED WIDTH*/
     padding: 20px;
-    height: 40vh;
-    box-shadow: 0 2.5px 2.5px 2.5px rgb(219, 219, 219);
-    border-bottom: 10px solid #E75C18;
+    height: 90%;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.144);
+    border-bottom: 8px solid #E75C18;
 }
 
 .title{

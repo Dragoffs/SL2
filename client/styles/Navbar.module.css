@@ -77,4 +77,5 @@
 .navbar button:hover {
     background-color: #F76902;
     color: white;
+    cursor: pointer;
 }
