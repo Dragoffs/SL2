@@ -11,3 +11,26 @@
 html{
     background-color: #F9F4F0;
 }
+
+.body-grid{
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-areas: 
+    'topleft topright'
+    'bottomleft bottomright';
+}
+
+.topleft{
+    grid-area: topleft;
+}
+.topright{
+    grid-area: topright;
+}
+.bottomleft{
+    grid-area: bottom-left;
+}
+.bottomright{
+    grid-area: bottomright;
+}

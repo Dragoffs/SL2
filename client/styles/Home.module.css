@@ -1,43 +1,78 @@
 .dashboard{
     padding: 20px;
+    padding-top: 5px;
     padding-top: 0;
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 70% 30%;
     grid-template-areas: 
     'sectionlist alerts'
+    'chart alerts'
+    'chart pinned'
     'chart pinned';
+    grid-gap: 5px;
 }
 
 .sectionlist{
     grid-area: sectionlist;
+    margin: 10px;
 }
-.alert{
+.alerts{ /* this is placeholder CSS */
     grid-area: alerts;
+    margin: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    height: 79%;
+    width:auto;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.144);
+    border-bottom: 8px solid #E75C18;
 }
-.chart{
+.chart{ /* this is placeholder CSS */
     grid-area: chart;
+    margin: 10px;
+    margin-top: 0px;
+    padding: 20px;
+    height: 410px;
+    width:auto;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.144);
+    
+    border-bottom: 8px solid #E75C18;
 }
-.pinned{
+.pinned{/* this is placeholder CSS for pinnedstudents.model.css*/
     grid-area: pinned;
+    margin: 10px;
 }
 
 .sectionlist .courselist{
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px 30px;
     margin: 10px;
-    margin-top: 0px;
+    margin-top: 5px;
     margin-right: 0;
     border: 2px solid #FF6C24;
     border-radius: 50px;
+    background-color: white;
     color: black;
     font-weight: 700;
     display: inline-block;
 }
 
+.sectionlist .courselist:hover{
+    color: white;
+    background-color: #FF6C24;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
 .dashheader{
     display: flex;
     padding: 10px;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-bottom: 0;
 }
 .sectionselect{
@@ -64,10 +99,17 @@
         margin: 10px;
 }
 .dashheader h2, .sectionselect h2{
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px;
     padding-top: 0px;
-    font-weight: 300;
+    font-weight: 700;
+}
+
+.sectionselect h3{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px;
+    padding-top: 0px;
 }
 
 .dashheader h3{
