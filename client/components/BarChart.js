@@ -29,6 +29,7 @@ export default function BarChart(props) {
 		var margin = { top: 10, right: 30, bottom: 20, left: 50 },
 			width = 680 - margin.left - margin.right,
 			height = 260 - margin.top - margin.bottom;
+			
 		svg = d3
 			.select("#bar")
 			.append('svg')

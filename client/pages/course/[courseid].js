@@ -9,6 +9,7 @@ import Head from 'next/head'
 import { HiChartSquareBar } from "react-icons/hi";
 import { IconContext } from "react-icons";
 import BarChart from "../../components/BarChart"
+import PieChart from '../../components/PieChart';
 
 export default function CoursePage(){
 
@@ -17,6 +18,7 @@ export default function CoursePage(){
     const [pinnedStudents, setPinnedStudents] = useState([])
 	const [studentList, setStudentList] = useState([])
 	const [tableData, setTableData] = useState([])
+	const [pieData, setPieData]  = useState([])
 
 	useEffect(() => {   
         if (courseid){
@@ -40,11 +42,11 @@ export default function CoursePage(){
             .then( data => {
                 setStudentList(data)
 				setTableData(transformData(data))
+				setPieData(pieChartData(data))
             })
         }
     }, [courseid])
 
-	console.log(tableData) //Delete this later
 
     useEffect(() => {
 		if (courseid){
@@ -80,6 +82,17 @@ export default function CoursePage(){
 			newStudentList.push(newStudent)
 		})
 		return newStudentList
+	}
+
+	const pieChartData = (students) => {
+		let success = 0
+		let failure = 0
+		students.forEach( student => {
+			let failureSuccess = countSucccessFailure(student.logs)
+			success += failureSuccess[1]
+			failure += failureSuccess[0]
+		})
+		return [{type: 'success', value: success},{type: 'failure', value: failure}]
 	}
 
 	const countSucccessFailure = (logs) => {
@@ -134,9 +147,14 @@ export default function CoursePage(){
 					</div>
                     <hr></hr>
 					<div className={styles.chartcontainer}>
-						{/* <img src="../images/scr1.jpg"></img> */}
 						<BarChart studentList={tableData}/>
-						<h3>* This is an image for display purposes until completed development, pending approval at MVP Beta Gate Review.</h3>
+						<PieChart
+							data={pieData}	
+							width={200}
+							height={200}
+							innerRadius={60}
+							outerRadius={100}
+						/>
 					</div>
 				</div>
            
