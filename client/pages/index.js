@@ -43,7 +43,7 @@ export default function Home() {
 	}, []);
 
 	const redirectCourse = (course) => {
-		router.push(`${process.env.NEXT_PUBLIC_API_ROUTE}/course/${course}`)
+		router.push(`/course/${course}`)
 	}
 
 	function arrayRemove(arr, value) { 
